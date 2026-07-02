@@ -1,0 +1,215 @@
+/* ── SiriScore brand tokens ──────────────────────────────── */
+:root {
+  --ss-orange:       #EA580C;
+  --ss-orange-light: #FFF7ED;
+  --ss-orange-dark:  #C2410C;
+  --ss-surface:      #FFFFFF;
+  --ss-bg:           #F9F7F4;
+  --ss-text:         #0F172A;
+  --ss-muted:        #94A3B8;
+  --ss-border:       #E2E8F0;
+  --ss-green:        #16A34A;
+}
+
+/* ── Override Material primary with SiriScore orange ──────── */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #EA580C;
+  --md-primary-fg-color--light: #FFF7ED;
+  --md-primary-fg-color--dark:  #C2410C;
+  --md-accent-fg-color:         #EA580C;
+  --md-default-bg-color:        #F9F7F4;
+  --md-default-fg-color:        #0F172A;
+  --md-default-fg-color--light: #475569;
+  --md-default-fg-color--lighter: #94A3B8;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #EA580C;
+  --md-primary-fg-color--light: #7C2D12;
+  --md-primary-fg-color--dark:  #FED7AA;
+  --md-accent-fg-color:         #FB923C;
+}
+
+/* ── Sidebar ──────────────────────────────────────────────── */
+.md-sidebar--primary {
+  border-right: 1px solid var(--md-default-fg-color--lighter, #E2E8F0);
+}
+
+.md-nav__link--active {
+  color: var(--ss-orange) !important;
+  font-weight: 600;
+}
+
+.md-nav__item--active > .md-nav__link {
+  color: var(--ss-orange) !important;
+}
+
+/* Active section indicator */
+.md-nav__item--active > .md-nav__link::before {
+  background-color: var(--ss-orange);
+}
+
+/* ── Top header ───────────────────────────────────────────── */
+.md-header {
+  background-color: #0F172A;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* ── Logo sizing ──────────────────────────────────────────── */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 36px;
+  width: auto;
+}
+
+/* ── Code blocks ──────────────────────────────────────────── */
+.md-typeset code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.85em;
+  background: var(--md-code-bg-color);
+  border-radius: 4px;
+}
+
+/* ── Admonitions: use orange for note ─────────────────────── */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: var(--ss-orange);
+}
+.md-typeset .admonition.note > .admonition-title,
+.md-typeset details.note > summary {
+  background-color: var(--ss-orange-light);
+  color: var(--ss-orange-dark);
+}
+.md-typeset .admonition.note > .admonition-title::before,
+.md-typeset details.note > summary::before {
+  background-color: var(--ss-orange);
+}
+
+/* ── Tables ───────────────────────────────────────────────── */
+.md-typeset table:not([class]) th {
+  background-color: var(--ss-orange);
+  color: #fff;
+}
+
+/* ── Search highlight ─────────────────────────────────────── */
+.md-search-result__teaser mark {
+  color: var(--ss-orange);
+}
+
+/* ── Right TOC active link ────────────────────────────────── */
+.md-nav--secondary .md-nav__link--active {
+  color: var(--ss-orange) !important;
+}
+
+/* ── Hide default MkDocs footer, use custom ───────────────── */
+.md-footer-meta { display: none; }
+.md-footer-nav  { display: none; }
+.md-footer       { display: none; }
+
+/* ── Custom SiriScore footer ──────────────────────────────── */
+.ss-footer {
+  background-color: #0F172A;
+  color: #94A3B8;
+  font-size: 0.85rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.ss-footer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 24px 32px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .ss-footer__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.ss-footer__logo {
+  height: 32px;
+  width: auto;
+  margin-bottom: 12px;
+  display: block;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.ss-footer__tagline {
+  display: block;
+  color: #64748B;
+  font-size: 0.82rem;
+  max-width: 220px;
+  line-height: 1.5;
+}
+
+.ss-footer__cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 600px) {
+  .ss-footer__cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.ss-footer__col h4 {
+  color: #E2E8F0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 14px 0;
+}
+
+.ss-footer__col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ss-footer__col ul li {
+  margin-bottom: 10px;
+}
+
+.ss-footer__col a {
+  color: #94A3B8;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.15s;
+}
+
+.ss-footer__col a:hover {
+  color: #EA580C;
+}
+
+.ss-footer__bottom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: #475569;
+}
+
+.ss-footer__bottom a {
+  color: #475569;
+  text-decoration: none;
+}
+
+.ss-footer__bottom a:hover {
+  color: #EA580C;
+}

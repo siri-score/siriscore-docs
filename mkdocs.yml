@@ -1,0 +1,114 @@
+site_name: SiriScore Docs
+site_url: https://docs.siriscore.xyz
+site_description: Bitcoin transaction privacy analysis — library, CLI, and REST API reference
+repo_url: https://github.com/siri-score/siriscore
+repo_name: siri-score/siriscore
+edit_uri: ""
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+extra:
+  footer: true
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/siri-score/siriscore
+      name: GitHub
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/siriscore
+      name: X / Twitter
+
+extra_css:
+  - assets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.inlinehilite
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - getting-started/index.md
+    - What is SiriScore: getting-started/what-is-siriscore.md
+    - Use the web app: getting-started/web-app.md
+    - Install the library: getting-started/install.md
+    - Run locally: getting-started/run-locally.md
+  - Library Reference:
+    - library/index.md
+    - score(): library/score.md
+    - score_as(): library/score-as.md
+    - import_labels(): library/import-labels.md
+    - Report and Finding models: library/models.md
+    - Check statuses: library/check-statuses.md
+    - Privacy guarantee: library/privacy-guarantee.md
+  - Heuristics:
+    - heuristics/index.md
+    - Penalty heuristics:
+      - H1 — Script type mismatch: heuristics/h1-script-mismatch.md
+      - H2 — Round payment amount: heuristics/h2-round-amount.md
+      - H3 — Address reuse: heuristics/h3-address-reuse.md
+      - H4 — UTXO age clustering: heuristics/h4-utxo-age.md
+      - H5 — High input count (CIOH): heuristics/h5-cioh.md
+      - H6 — Dust input: heuristics/h6-dust.md
+      - H7 — Non-BIP69 ordering: heuristics/h7-bip69.md
+      - H8 — Tainted label: heuristics/h8-tainted-label.md
+    - Positive heuristics:
+      - H9 — Coinjoin input detection: heuristics/h9-coinjoin-input.md
+      - H10 — Coinjoin structure detection: heuristics/h10-coinjoin-tx.md
+      - H11 — Payjoin opportunity: heuristics/h11-payjoin.md
+    - H13 — nLockTime anti-fee-sniping: heuristics/h13-nlocktime.md
+    - Silent payments (BIP-352): heuristics/h12-silent-payments.md
+  - REST API:
+    - api/index.md
+    - POST /score: api/score.md
+    - POST /score/batch (coming): api/batch.md
+    - GET /heuristics (coming): api/heuristics.md
+    - GET /score/{txid} (coming): api/score-txid.md
+  - Wallet Guides:
+    - wallets/index.md
+    - Sparrow Wallet: wallets/sparrow.md
+    - BTCPay Server: wallets/btcpay.md
+    - Cake Wallet (coming): wallets/cake.md
+    - Generic integration: wallets/generic.md
+  - Label System:
+    - labels/index.md
+    - Label format: labels/format.md
+    - Importing from Sparrow: labels/sparrow-import.md
+    - Tag types: labels/tag-types.md
+    - How H8 uses labels: labels/h8.md
+  - Contributing: contributing.md
