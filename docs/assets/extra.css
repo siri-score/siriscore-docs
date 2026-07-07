@@ -748,7 +748,7 @@
 .ss-prevnext__title {
   display: block;
   color: var(--orange);
-  font-weight: 700;
+  font-weight: 500;
   transition: color 150ms;
 }
 .ss-prevnext__link:hover .ss-prevnext__title { color: var(--orange-dark); }

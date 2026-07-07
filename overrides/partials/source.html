@@ -1,0 +1,14 @@
+{#-
+  Copied from mkdocs-material 9.7.6 to open the header repo link in a
+  new tab. Keep in sync with the theme's partials/source.html when
+  upgrading Material.
+-#}
+<a href="{{ config.repo_url }}" target="_blank" rel="noopener noreferrer" title="{{ lang.t('source') }}" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    {% set icon = config.theme.icon.repo or "fontawesome/brands/git-alt" %}
+    {% include ".icons/" ~ icon ~ ".svg" %}
+  </div>
+  <div class="md-source__repository">
+    {{ config.repo_name }}
+  </div>
+</a>
