@@ -28,5 +28,5 @@ H8 checks three match types against the label store:
 - Consider using a coinjoin to break the link before spending further
 - Review your label store — a `tainted` tag on a transaction labels all its outputs, which may be broader than intended
 
-→ [Label system](../labels/format.md)
-→ [Importing from Sparrow](../labels/sparrow-import.md)
+:material-chevron-double-right: [Label system](../labels/format.md)
+:material-chevron-double-right: [Importing from Sparrow](../labels/sparrow-import.md)

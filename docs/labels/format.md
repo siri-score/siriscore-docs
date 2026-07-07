@@ -24,7 +24,7 @@ The primary import format is [BIP329](https://github.com/bitcoin/bips/blob/maste
 
 ## Tag types
 
-→ [Tag types reference](tag-types.md)
+:material-chevron-double-right: [Tag types reference](tag-types.md)
 
 ## Legacy format
 

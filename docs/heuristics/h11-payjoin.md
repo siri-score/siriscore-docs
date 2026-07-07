@@ -36,4 +36,4 @@ Payjoin (BIP-77) allows the recipient to contribute an input to the transaction,
 
 The `pj=` parameter contains an HTTPS URL — the sender posts the original PSBT there and receives a modified PSBT with the recipient's input added.
 
-→ [BTCPay Server integration](../wallets/btcpay.md)
+:material-chevron-double-right: [BTCPay Server integration](../wallets/btcpay.md)
