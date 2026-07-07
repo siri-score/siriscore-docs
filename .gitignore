@@ -1,0 +1,6 @@
+# MkDocs build output — built fresh by `mkdocs gh-deploy` in CI (deploy.yml)
+site/
+
+__pycache__/
+*.pyc
+.venv/

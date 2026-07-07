@@ -1,7 +1,7 @@
 site_name: SiriScore Docs
 site_url: https://docs.siriscore.xyz/
 site_description: Bitcoin transaction privacy analysis — library, CLI, and REST API reference
-repo_url: https://github.com/siri-score/siriscore-docs
+repo_url: https://github.com/siri-score/siriscore
 repo_name: siri-score/siriscore
 edit_uri: ""
 
@@ -48,6 +48,12 @@ extra_javascript:
 # Local hook (no plugin dependency): emits redirect stubs for moved pages
 hooks:
   - hooks/redirects.py
+
+# Extra paths for `mkdocs serve` to watch (templates and hooks aren't
+# auto-watched, only docs/ and this file)
+watch:
+  - overrides
+  - hooks
 
 markdown_extensions:
   - admonition
