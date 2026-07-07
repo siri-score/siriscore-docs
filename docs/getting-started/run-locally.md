@@ -1,6 +1,6 @@
 # Run locally
 
-Running SiriScore locally means no transaction data is sent to siriscore.xyz. Your PSBT or txid stays on your machine.
+Running SiriScore locally means no transaction data is sent to <strong><a href="https://siriscore.xyz" target="_blank" rel="noopener noreferrer">siriscore.xyz</a></strong>. Your PSBT or txid stays on your machine.
 
 ## Start the server
 

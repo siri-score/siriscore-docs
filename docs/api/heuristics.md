@@ -2,7 +2,7 @@
 
 **Status:** Coming soon
 
-Returns metadata for all available heuristics — IDs, names, severity, weight, and whether a network connection is required.
+Returns metadata for all available heuristics: IDs, names, severity, weight, and whether a network connection is required.
 
 ```json
 [

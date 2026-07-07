@@ -1,6 +1,6 @@
 # Use the web app
 
-The fastest way to try SiriScore is the hosted tool at **[siriscore.xyz](https://siriscore.xyz)**. No install required.
+The fastest way to try SiriScore is the hosted tool at <strong><a href="https://siriscore.xyz" target="_blank" rel="noopener noreferrer">siriscore.xyz</a></strong>. No install required.
 
 ## Walkthrough
 
@@ -29,7 +29,7 @@ The fastest way to try SiriScore is the hosted tool at **[siriscore.xyz](https:/
 
 Click **Import labels from Sparrow Wallet** and select a `.jsonl` file exported from Sparrow Wallet (BIP329 format). Imported labels are stored locally in a SQLite database on the server and used to trigger H8 (tainted label detection).
 
-→ [Label system reference](../labels/sparrow-import.md)
+:material-chevron-double-right: [Label system reference](../labels/sparrow-import.md)
 
 ## Running your own instance
 
@@ -41,4 +41,4 @@ uvicorn api.main:app --reload
 # open http://localhost:8000
 ```
 
-→ [Run locally](run-locally.md)
+:material-chevron-double-right: [Run locally](run-locally.md)

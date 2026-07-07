@@ -1,7 +1,7 @@
 site_name: SiriScore Docs
-site_url: https://docs.siriscore.xyz
+site_url: https://docs.siriscore.xyz/
 site_description: Bitcoin transaction privacy analysis — library, CLI, and REST API reference
-repo_url: https://github.com/siri-score/siriscore
+repo_url: https://github.com/siri-score/siriscore-docs
 repo_name: siri-score/siriscore
 edit_uri: ""
 
@@ -10,12 +10,16 @@ theme:
   custom_dir: overrides
   palette:
     - scheme: default
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-sunny
         name: Switch to dark mode
     - scheme: slate
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-night
         name: Switch to light mode
   features:
     - navigation.sections
@@ -26,24 +30,24 @@ theme:
     - search.suggest
     - content.code.copy
     - content.code.annotate
-  logo: assets/logo.png
-  favicon: assets/favicon.png
-  font:
-    text: Inter
-    code: JetBrains Mono
+  logo: assets/eyelogoonly.png
+  favicon: assets/eyelogoonly.png
+  # Fonts are self-hosted in docs/assets/fonts (privacy: no Google CDN,
+  # matching main-repo PRs #60/#62); font: false disables Material's loader
+  font: false
 
 extra:
   footer: true
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/siri-score/siriscore
-      name: GitHub
-    - icon: fontawesome/brands/x-twitter
-      link: https://x.com/siriscore
-      name: X / Twitter
 
 extra_css:
   - assets/extra.css
+
+extra_javascript:
+  - assets/extra.js
+
+# Local hook (no plugin dependency): emits redirect stubs for moved pages
+hooks:
+  - hooks/redirects.py
 
 markdown_extensions:
   - admonition
@@ -54,6 +58,11 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.inlinehilite
+  # Renders :material-*: shortcodes as inline SVGs bundled with the theme
+  # (no icon font, no CDN)
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - tables
   - attr_list
   - md_in_html
@@ -64,7 +73,7 @@ nav:
   - Home: index.md
   - Getting Started:
     - getting-started/index.md
-    - What is SiriScore: getting-started/what-is-siriscore.md
+    # - What is SiriScore: getting-started/what-is-siriscore.md
     - Use the web app: getting-started/web-app.md
     - Install the library: getting-started/install.md
     - Run locally: getting-started/run-locally.md

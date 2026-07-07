@@ -21,7 +21,7 @@ Content-Type: application/json
 |-------|------|---------|-------------|
 | `input` | string | required | PSBT (base64), raw tx hex, or txid |
 | `input_type` | string | `"psbt"` | `"psbt"`, `"rawtx"`, or `"txid"` |
-| `lookup` | boolean | `true` | Enable H3/H4 network checks |
+| `lookup` | boolean | `false` | Enable H3/H4 network checks |
 
 ## Response
 

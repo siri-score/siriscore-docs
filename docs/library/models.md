@@ -40,7 +40,7 @@ class Check:
     reason: str          # human-readable explanation
 ```
 
-→ [Check statuses](check-statuses.md)
+:material-chevron-double-right: [Check statuses](check-statuses.md)
 
 ## Severity
 

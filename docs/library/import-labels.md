@@ -6,7 +6,7 @@ siriscore.import_labels(path: str, *, source: str = "sparrow") -> int
 
 Imports coin labels from a file into the local SQLite label store (`~/.utxo-privacy-scorer/labels.db`). Returns the number of labels imported.
 
-Labels are used by [H8](../heuristics/h8-tainted-label.md) — if a tainted UTXO is found among the transaction's inputs, H8 fires and the score is capped at 40.
+Labels are used by [H8](../heuristics/h8-tainted-label.md). If a tainted UTXO is found among the transaction's inputs, H8 fires and the score is capped at 40.
 
 ## Parameters
 
@@ -17,7 +17,7 @@ Labels are used by [H8](../heuristics/h8-tainted-label.md) — if a tainted UTXO
 
 ## Supported format
 
-Sparrow Wallet BIP329 JSONL export — one JSON object per line:
+Sparrow Wallet BIP329 JSONL export, one JSON object per line:
 
 ```jsonl
 {"type":"tx","ref":"93c98c2a...","label":"Exchange withdrawal","tag":"tainted"}
@@ -27,7 +27,7 @@ Sparrow Wallet BIP329 JSONL export — one JSON object per line:
 
 Field `tag` drives scoring: `tainted` triggers H8; `coinjoin` triggers H9 (suppresses H5).
 
-→ [Tag types reference](../labels/tag-types.md)
+:material-chevron-double-right: [Tag types reference](../labels/tag-types.md)
 
 ## Example
 

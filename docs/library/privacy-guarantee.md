@@ -6,10 +6,10 @@ SiriScore is designed so that no transaction data leaves your machine by default
 
 | Heuristic | What is sent | Destination |
 |-----------|-------------|-------------|
-| H3 — Address reuse | Each input address | mempool.space (blockstream.info fallback) |
-| H4 — UTXO age clustering | Each input's prevout txid | mempool.space (blockstream.info fallback) |
+| H3: Address reuse | Each input address | mempool.space (blockstream.info fallback) |
+| H4: UTXO age clustering | Each input's prevout txid | mempool.space (blockstream.info fallback) |
 
-Network checks are **opt-out by default** — they only run when you explicitly pass `lookup=True` (library / CLI) or toggle on "Enable network checks" (web UI).
+Network checks are **opt-out by default**. They only run when you explicitly pass `lookup=True` (library / CLI) or toggle on "Enable network checks" (web UI).
 
 All other heuristics (H1, H2, H5, H6, H7, H8, H9, H10, H11) run entirely offline against the transaction data you provide.
 
@@ -45,10 +45,10 @@ When `rpc_url` is set, all network lookups go to your node. No data reaches memp
 
 ## Label store
 
-Labels are stored in `~/.utxo-privacy-scorer/labels.db` — a local SQLite file. No cloud sync, no telemetry.
+Labels are stored in `~/.utxo-privacy-scorer/labels.db`, a local SQLite file. No cloud sync, no telemetry.
 
 ## The web app at siriscore.xyz
 
 When you use the hosted tool at siriscore.xyz, your PSBT or txid is sent to the siriscore.xyz server over HTTPS. For maximum privacy, run the server locally instead.
 
-→ [Run locally](../getting-started/run-locally.md)
+:material-chevron-double-right: [Run locally](../getting-started/run-locally.md)

@@ -44,7 +44,7 @@ Sparrow exports one JSON object per line:
 {"type":"output","ref":"<txid>:0","label":"Coinjoin output","tag":"coinjoin"}
 ```
 
-→ [Label system reference](../labels/format.md)
+:material-chevron-double-right: [Label system reference](../labels/format.md)
 
 ## Supported Sparrow versions
 

@@ -50,4 +50,4 @@ print(report.output_count)    # 2
 
 ## Return value
 
-→ [`Report`](models.md#report)
+:material-chevron-double-right: [`Report`](models.md#report)
