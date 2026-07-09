@@ -1,0 +1,52 @@
+{#-
+  SEO head markup: Open Graph / Twitter cards on every page, JSON-LD on
+  the landing page declaring the docs and siriscore.xyz as one entity.
+  Canonical URLs and meta descriptions come from base.html (site_url +
+  hooks/seo.py). seo_title is set in main.html so <title> can share it.
+-#}
+{%- set seo_description = page.meta.description | d(config.site_description, true) %}
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="SiriScore" />
+<meta property="og:title" content="{{ seo_title }}" />
+<meta property="og:description" content="{{ seo_description }}" />
+<meta property="og:url" content="{{ page.canonical_url }}" />
+<meta property="og:image" content="https://siriscore.xyz/images/logo.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@siriscore" />
+<meta name="twitter:title" content="{{ seo_title }}" />
+<meta name="twitter:description" content="{{ seo_description }}" />
+<meta name="twitter:image" content="https://siriscore.xyz/images/logo.png" />
+{%- if page.is_homepage %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "SiriScore Docs",
+  "url": "https://docs.siriscore.xyz/",
+  "description": "{{ config.site_description }}",
+  "about": {
+    "@type": "WebApplication",
+    "name": "SiriScore",
+    "url": "https://siriscore.xyz/",
+    "description": "A free, open-source Bitcoin privacy tool: a pre-broadcast Bitcoin transaction privacy analyzer that scores PSBTs, raw transactions, and txids from 0 to 100 for privacy leaks.",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "sameAs": [
+      "https://siriscore.xyz/",
+      "https://github.com/siri-score/siriscore",
+      "https://x.com/siriscore",
+      "https://www.linkedin.com/in/siriscore/",
+      "https://www.instagram.com/siriscore.btc/",
+      "https://njump.me/npub17q93lwmnkvumtlf0cgv7jl6eeg2wvg2gf85rfcmwlcqs87flqe0s7vr3un"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SiriScore",
+    "url": "https://siriscore.xyz/",
+    "logo": "https://siriscore.xyz/images/logo.png"
+  }
+}
+</script>
+{%- endif %}

@@ -1,5 +1,27 @@
 {% extends "base.html" %}
 
+{#- Shared by <title> and the social tags in partials/seo.html -#}
+{%- if page and page.is_homepage -%}
+  {%- set seo_title = "SiriScore Docs — Bitcoin Privacy Scorer Documentation" -%}
+{%- elif page and page.meta and page.meta.title -%}
+  {%- set seo_title = page.meta.title ~ " | SiriScore Docs" -%}
+{%- elif page and page.title -%}
+  {%- set seo_title = page.title | striptags ~ " | SiriScore Docs" -%}
+{%- else -%}
+  {%- set seo_title = config.site_name -%}
+{%- endif -%}
+
+{% block htmltitle %}
+  <title>{{ seo_title }}</title>
+{% endblock %}
+
+{% block extrahead %}
+  {{ super() }}
+  {% if page %}{# the 404 template renders with no page object #}
+    {% include "partials/seo.html" %}
+  {% endif %}
+{% endblock %}
+
 {% block content %}
   {{ super() }}
   {% include "partials/prevnext.html" %}
