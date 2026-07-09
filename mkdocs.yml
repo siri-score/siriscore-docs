@@ -1,6 +1,9 @@
 site_name: SiriScore Docs
 site_url: https://docs.siriscore.xyz/
-site_description: Bitcoin transaction privacy analysis — library, CLI, and REST API reference
+site_description: >-
+  Official documentation for SiriScore, the free, open-source Bitcoin privacy
+  tool. Learn how to score PSBTs, raw transactions, and txids for privacy
+  leaks before broadcasting.
 repo_url: https://github.com/siri-score/siriscore
 repo_name: siri-score/siriscore
 edit_uri: ""
@@ -45,9 +48,11 @@ extra_css:
 extra_javascript:
   - assets/extra.js
 
-# Local hook (no plugin dependency): emits redirect stubs for moved pages
+# Local hooks (no plugin dependency): redirect stubs for moved pages,
+# per-page SEO meta descriptions
 hooks:
   - hooks/redirects.py
+  - hooks/seo.py
 
 # Extra paths for `mkdocs serve` to watch (templates and hooks aren't
 # auto-watched, only docs/ and this file)
